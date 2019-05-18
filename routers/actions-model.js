@@ -33,10 +33,10 @@ router.post('/', (req, res) => {
     }
 
     db.insert(newAction)
-        .then(newAction => {
-            res.status(201).json(newAction)
+        .then(action => {
+            res.status(201).json(action)
         })
-        .catch(err => {
+        .catch(error => {
             res.status(404).json({ error: "error adding the wanted actions." });
         })
 });
@@ -48,8 +48,8 @@ router.delete('/:id', (req, res) => {
         .then(action => {
             res.status(201).json(action)
         })
-        .catch(err => {
-            res.status(404).json({ error: "The specified post does not exists." });
+        .catch(error => {
+            res.status(404).json({ error: "The specified post does not exists, Unable to delete." });
         })
 });
 
@@ -65,7 +65,7 @@ router.put('/:id', (req, res) => {
         .then(project => {
             res.status(200).json(project);
         })
-        .catch(err => {
+        .catch(error => {
             res.status(404).json({ error: "Unable able to update the specified Id." });
         })
 });
