@@ -27,6 +27,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     let newAction = {
+        project_id: req.body.project_id,
         description: req.body.description,
         notes: req.body.notes,
         completed: false,
