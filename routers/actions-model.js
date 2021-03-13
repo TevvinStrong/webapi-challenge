@@ -33,6 +33,8 @@ router.post('/', (req, res) => {
         completed: false,
     }
 
+    /*TODO: CREATE A CHECK */
+
     db.insert(newAction)
         .then(action => {
             res.status(201).json(action)
@@ -45,7 +47,8 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     let projectId = req.params.id;
 
-    db.remove(projectId)
+    /*TODO: CREATE A CHECK */
+    db.remove(project)
         .then(action => {
             res.status(201).json(action)
         })
